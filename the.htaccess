@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_URI}  ^/([0-9]+)/edit$
+RewriteCond %{QUERY_STRING}  ^pkey=([0-9,a-z,A-Z]+)$
+RewriteRule ^([0-9]+)/?/edit$ /view.php?id=$1&edit=true&passkey=%1 [NC,L]
+
+RewriteCond %{QUERY_STRING}  ^pkey=([0-9,a-z,A-Z]+)$
+RewriteRule ^([0-9]+)$ /view.php?id=$1&edit=false&passkey=%1 [L]
+
+RewriteRule ^recent/?$ list.php? [NC,L]
+RewriteRule ^recent/([0-9]+)/?$ list.php?offset=$1 [NC,L]
+
+RewriteRule ^about/?$ about.php? [NC,L]
+
+RewriteRule ^drop/view/([0-9]+)/?$ view.php?id=$1&edit=false [NC,L]
+RewriteRule ^view/([0-9]+)/?$ view.php?id=$1&edit=false [NC,L]
+RewriteRule ^([0-9]+)/?$ view.php?id=$1&edit=false [NC,L]
+RewriteRule ^([0-9]+)/?/edit$ view.php?id=$1&edit=true [NC,L]
+</IfModule>
+
+php_value memory_limit 32M
+php_value post_max_size 30M
+php_value upload_max_filesize 25M

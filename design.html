@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>DropBin</title>
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="default" charset="utf-8" />
+	</head>
+	<body>
+		<div id="site">
+			<div id="nav">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Recent</a></li>
+					<li><a href="#">Search</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</div>
+			<div id="account">
+				<p>You are currently logged in as Joe User. <a href="#">Manage</a> <a href="#">Logout</a></p>
+			</div>
+			<div id="status">
+				<div class="success">
+					<p>Your text was successfully dropped. View it here: <a href="#">#201</a></p>
+				</div>
+				<div class="error">
+					<p>There was an error in dropping your text. Please see the highlighted boxes below.</p>
+				</div>
+			</div>
+			<div class="drop">
+				<form action="drop" method="post" accept-charset="utf-8">
+					<p id="form_highlighting">
+						<select name="language">
+							<option>No</option><option>ASP</option><option>HTML</option><option>Bash</option><option>C</option><option>C++</option><option>CSS</option><option>Diff</option><option>Java</option><option>JavaScript</option><option>Lisp</option><option>Lua</option><option>MySQL</option><option>Objective C</option><option>Perl</option><option>PHP</option><option>Python</option><option>Ruby</option><option>SQL</option><option>XML</option>
+						</select>
+						
+						Highlighting
+					</p>
+					<p id="form_type_text"><input type="radio" name="type" value="text" checked="checked" /> Text</p>
+					<p id="form_type_file"><input type="radio" name="type" value="file" /> File</p>
+					<br />
+					<p id="form_text" style="padding: 0;">
+						<textarea name="text" rows="20"></textarea>
+					</p>
+					<br />
+					<p id="form_title">
+						Alternate Title <input type="text" name="title" />
+					</p>
+					<p>Post as:</p>
+					<p id="form_as_user"><input type="radio" name="post_as" value="userid" checked="checked" /> Joe User</p>
+					<p id="form_as_anon"><input type="radio" name="post_as" value="anon" /> Anonymous</p>
+					<br />
+					<p id="form_submit"><input type="submit" value="Drop That!" /></p>
+					<p id="form_editable" class="error">
+						<input type="checkbox" name="editable" value="yes" /> Editable
+					</p>
+					<p id="form_private">
+						<input type="checkbox" name="private" value="yes" /> Private
+					</p>
+				</form>
+			</div>
+			<div id="footer">
+				<p>DropBin is an Open Source Project by <a href="http://jakedahn.com/">Jake Dahn</a>.</p>
+				<p>DropBin is sponsored by <a href="http://hyperboledesign.com/">HyperboleDesign</a>.</p>
+				<p>Special thanks go out to <a href="http://www.devixdesign.com/">Fernando Lins</a> for the great logo, <a href="http://milkcartondesigns.com/">Joey Brooks</a> for help with php/htaccess, <a href="http://chrismeller.com/">Chris Meller</a> for donating the domain and <a href="http://bryanculver.com/">Bryan Culver</a> for the new design and help with additional features.</p>
+				<p>Any and all donations are welcome. All donations will go toward further development of DropBin</p>
+			</div>
+		</div>
+	</body>
+</html>
